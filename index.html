@@ -5,6 +5,22 @@
   <title>ポートフォリオ</title>
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <link rel="stylesheet" href="style.css">
+
+  <script>
+    AFRAME.registerComponent('fly-updown', {
+      tick: function () {
+        const el = this.el;
+        const pos = el.getAttribute('position');
+
+        // Eキーで上昇
+        if (AFRAME.utils.keyboard.isPressed('KeyE')) pos.y += 0.1;
+        // Qキーで下降
+        if (AFRAME.utils.keyboard.isPressed('KeyQ')) pos.y -= 0.1;
+
+        el.setAttribute('position', pos);
+      }
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -20,7 +36,7 @@
       </a-assets>
       <a-entity gltf-model="#model1" position="0 0 0" rotation="0 0 0" scale="3 3 3"></a-entity>
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity camera look-controls wasd-controls="fly: true" position="0 4 2"></a-entity>
+      <a-entity camera look-controls wasd-controls="fly: true" fly-updown position="0 4 2"></a-entity>
     </a-scene>
   </section>
 
@@ -33,7 +49,7 @@
       </a-assets>
       <a-entity gltf-model="#model3" position="0 0 0" rotation="0 0 0" scale="3 3 3"></a-entity>
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity camera look-controls wasd-controls="fly: true" position="0 3.5 3"></a-entity>
+      <a-entity camera look-controls wasd-controls="fly: true" fly-updown position="0 3.5 3"></a-entity>
     </a-scene>
 </section>
 
@@ -47,7 +63,7 @@
       </a-assets>
       <a-entity gltf-model="#model2" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity camera look-controls wasd-controls="fly: true" position="15 15 0" rotation="-15 50 0"></a-entity>
+      <a-entity camera look-controls wasd-controls="fly: true" fly-updown position="15 15 0" rotation="-15 50 0"></a-entity>
     </a-scene>
   </section>
 
