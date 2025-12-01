@@ -48,3 +48,20 @@ footer {
   padding: 1em;
   color: #555;
 }
+
+/* ▼ ヘッダー内ナビゲーション */
+nav {
+  margin-top: 0.5em;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
