@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene embedded>
+    <a-assets>
+      <a-asset-item id="model1" src="assets/model1.glb"></a-asset-item>
+    </a-assets>
+
+    <a-entity gltf-model="#model1" position="0 0 0" scale="3 3 3"></a-entity>
+    <a-sky color="#ECECEC"></a-sky>
+
+    <!-- このシーン専用のカメラ（独立） -->
+    <a-entity camera look-controls wasd-controls position="0 4 2"></a-entity>
+  </a-scene>
+</body>
+</html>

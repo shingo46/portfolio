@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>ポートフォリオ</title>
-  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,35 +21,17 @@
 
   <section>
     <h2>① クリスマスの少女</h2>
-    <p>この作品はクリスマスをの楽しいをテーマに制作しました。</p>
-    <a-scene embedded>
-      <a-assets>
-        <a-asset-item id="model1" src="assets/model1.glb"></a-asset-item>
-      </a-assets>
-      <a-entity gltf-model="#model1" position="0 0 0" rotation="0 0 0" scale="3 3 3"></a-entity>
-      <a-sky color="#ECECEC"></a-sky>
-<<<<<<< HEAD
-      <a-entity camera look-controls wasd-controls="fly: true" fly-updown position="0 4 2"></a-entity>
-=======
-      <a-entity camera look-controls wasd-controls position="0 4 2"></a-entity>
->>>>>>> parent of 1fb31d7 (NewControll)
-    </a-scene>
+    <p>この作品は「クリスマスの楽しさ」をテーマに制作しました。</p>
+    <p class="camera-guide">🖱 カメラ操作：マウスで視点回転、WASDキーで移動できます</p>
+
+    <iframe src="scene1.html"></iframe>
   </section>
 
   <section>
-    <h2>② はじめての３Dモデリングの模倣です。</h2>
-    <a-scene embedded>
-      <a-assets>
-        <a-asset-item id="model2" src="assets/model2.glb"></a-asset-item>
-      </a-assets>
-      <a-entity gltf-model="#model2" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
-      <a-sky color="#ECECEC"></a-sky>
-<<<<<<< HEAD
-      <a-entity camera look-controls wasd-controls="fly: true" fly-updown position="15 15 0" rotation="-15 50 0"></a-entity>
-=======
-      <a-entity camera look-controls wasd-controls position="15 15 0" rotation="-15 50 0"></a-entity>
->>>>>>> parent of 1fb31d7 (NewControll)
-    </a-scene>
+    <h2>② はじめての3Dモデリングの模倣</h2>
+    <p class="camera-guide">🖱 カメラ操作：マウスで視点回転、WASDキーで移動できます</p>
+
+    <iframe src="scene2.html"></iframe>
   </section>
 
   <footer>
