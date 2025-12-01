@@ -12,19 +12,57 @@
       padding: 0;
       overflow: hidden;
     }
-  </style>
 
+    /* ロード中に表示する画像 */
+    #loading-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #f0f0f0;
+      transition: opacity 0.5s;
+      z-index: 10;
+    }
+
+    /* 消えるとき */
+    #loading-image.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- 🔹 ロード中に表示する画像 -->
+  <img id="loading-image" src="assets/model1_preview.jpg" alt="Loading...">
+
   <a-scene embedded>
     <a-assets>
       <a-asset-item id="model1" src="assets/model1.glb"></a-asset-item>
     </a-assets>
 
-    <a-entity gltf-model="#model1" position="0 0 0" scale="3 3 3"></a-entity>
+    <a-entity id="modelEntity"
+              gltf-model="#model1"
+              position="0 0 0"
+              scale="3 3 3">
+    </a-entity>
+
     <a-sky color="#ECECEC"></a-sky>
 
     <a-entity camera look-controls wasd-controls position="0 4 2"></a-entity>
   </a-scene>
+
+  <script>
+    const model = document.getElementById("modelEntity");
+    const loadingImage = document.getElementById("loading-image");
+
+    model.addEventListener("model-loaded", () => {
+      console.log("モデル読み込み完了");
+      loadingImage.classList.add("hidden");
+    });
+  </script>
+
 </body>
 </html>
