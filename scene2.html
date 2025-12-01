@@ -13,7 +13,6 @@
       overflow: hidden;
     }
 
-    /* ロード中に表示する画像 */
     #loading-image {
       position: absolute;
       top: 0;
@@ -26,7 +25,6 @@
       z-index: 10;
     }
 
-    /* 消えるとき */
     #loading-image.hidden {
       opacity: 0;
       pointer-events: none;
@@ -35,18 +33,51 @@
 </head>
 <body>
 
-  <!-- 🔹 ロード中に表示する画像 -->
   <img id="loading-image" src="assets/model2_preview.png" alt="Loading...">
+
+  <!-- 上下移動コンポーネント -->
+  <script>
+    AFRAME.registerComponent('fly-updown', {
+      schema: { speed: {default: 3} },
+
+      init: function () {
+        this.keys = {};
+        window.addEventListener('keydown', (e) => { this.keys[e.code] = true; });
+        window.addEventListener('keyup',   (e) => { this.keys[e.code] = false; });
+      },
+
+      tick: function (time, delta) {
+        const el = this.el;
+        const pos = el.getAttribute('position');
+        const move = this.data.speed * (delta / 1000);
+
+        if (this.keys["Space"]) pos.y += move;
+        if (this.keys["ShiftLeft"] || this.keys["ShiftRight"]) pos.y -= move;
+
+        el.setAttribute('position', pos);
+      }
+    });
+  </script>
 
   <a-scene embedded>
     <a-assets>
       <a-asset-item id="model2" src="assets/model2.glb"></a-asset-item>
     </a-assets>
 
-    <a-entity gltf-model="#model2" position="0 0 0" scale="1 1 1"></a-entity>
+    <a-entity id="modelEntity"
+              gltf-model="#model2"
+              position="0 0 0"
+              scale="3 3 3">
+    </a-entity>
+
     <a-sky color="#ECECEC"></a-sky>
 
-    <a-entity camera look-controls wasd-controls="fly: true" fly-updown position="15 15 0" rotation="-15 50 0"></a-entity>
+    <a-entity camera 
+              look-controls
+              wasd-controls="fly: true"
+              fly-updown
+              position="0 4 2">
+    </a-entity>
   </a-scene>
 
   <script>
