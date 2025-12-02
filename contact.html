@@ -28,6 +28,11 @@
   <h2>お問い合わせフォーム</h2>
   <p>ご質問やご感想など、お気軽にお送りください。</p>
 
+  <!-- 🔹 ロード中メッセージ -->
+  <div id="loading-message">
+    Googleフォームを読み込み中です。少しお待ちください…
+  </div>
+
   <!-- ▼ Googleフォームを埋め込む -->
   <iframe
     class="google-form"
@@ -40,6 +45,13 @@
 <footer>
   <p>© 2025 鮫島 紳吾</p>
 </footer>
+
+<script>
+  // iframe が読み込まれたらローディング表示を消す
+  document.getElementById("google-form").addEventListener("load", function() {
+    document.getElementById("loading-message").style.display = "none";
+  });
+</script>
 
 </body>
 </html>
