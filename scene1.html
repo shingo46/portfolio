@@ -39,29 +39,53 @@
 
   <!-- 🔹 A-Frame 上下移動コンポーネント -->
   <script>
-    AFRAME.registerComponent('fly-updown', {
-      schema: {
-        speed: {default: 3}
-      },
+AFRAME.registerComponent("flat-wasd", {
+  schema: {
+    speed: {default: 3}
+  },
 
-      init: function () {
-        this.keys = {};
-        window.addEventListener('keydown', (e) => { this.keys[e.code] = true; });
-        window.addEventListener('keyup',   (e) => { this.keys[e.code] = false; });
-      },
+  init: function () {
+    this.keys = {};
+    window.addEventListener("keydown", e => this.keys[e.code] = true);
+    window.addEventListener("keyup",   e => this.keys[e.code] = false);
+  },
 
-      tick: function (time, delta) {
-        const el = this.el;
-        const pos = el.getAttribute('position');
-        const move = this.data.speed * (delta / 1000);
+  tick: function (time, delta) {
+    const el = this.el;
+    const pos = el.getAttribute("position");
+    const rot = el.getAttribute("rotation");
+    const move = this.data.speed * (delta / 1000);
 
-        if (this.keys["Space"]) pos.y += move; // 上昇
-        if (this.keys["ShiftLeft"] || this.keys["ShiftRight"]) pos.y -= move; // 下降
+    // --- 水平方向だけの角度（Y軸回転） ---
+    const yaw = THREE.MathUtils.degToRad(rot.y);
 
-        el.setAttribute('position', pos);
-      }
-    });
-  </script>
+    // 基本方向ベクトル（カメラの傾きは無視）
+    const forward = new THREE.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
+    const right   = new THREE.Vector3(-forward.z, 0, forward.x);
+
+    // --- 移動処理（地面と水平のみ） ---
+    if (this.keys["KeyW"]) {
+      pos.x += forward.x * move;
+      pos.z += forward.z * move;
+    }
+    if (this.keys["KeyS"]) {
+      pos.x -= forward.x * move;
+      pos.z -= forward.z * move;
+    }
+    if (this.keys["KeyA"]) {
+      pos.x -= right.x * move;
+      pos.z -= right.z * move;
+    }
+    if (this.keys["KeyD"]) {
+      pos.x += right.x * move;
+      pos.z += right.z * move;
+    }
+
+    el.setAttribute("position", pos);
+  }
+});
+</script>
+
 
   <a-scene embedded>
     <a-assets>
@@ -79,7 +103,7 @@
     <!-- 🎥 カメラ：上下移動＋WASD対応 -->
     <a-entity camera 
               look-controls
-              wasd-controls="fly: true"
+              flat-wasd
               fly-updown
               position="0 4 2">
     </a-entity>
