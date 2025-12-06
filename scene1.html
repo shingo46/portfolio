@@ -81,6 +81,9 @@ AFRAME.registerComponent("flat-wasd", {
       pos.z += right.z * move;
     }
 
+    if (this.keys["Space"]) pos.y += move; // 上昇
+    if (this.keys["ShiftLeft"] || this.keys["ShiftRight"]) pos.y -= move; // 下降
+
     el.setAttribute("position", pos);
   }
 });
