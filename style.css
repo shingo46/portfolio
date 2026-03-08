@@ -9,7 +9,11 @@ header {
   text-align: center;
   background: #333;
   color: white;
-  padding: 1.2em 0;
+  padding: 20px 0;
+}
+
+header h1{
+  margin: 0;
 }
 
 section {
@@ -19,6 +23,15 @@ section {
   padding: 1.5em 2em;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* プロフィールページ用 */
+.profile-section{
+  text-align: center;
+}
+.profile-section ul{
+  list-style-position: inside;
+  padding: 0;
 }
 
 /* ▼ カメラ説明文の見た目を整える */
@@ -51,7 +64,7 @@ footer {
 
 /* ▼ ヘッダー内ナビゲーション */
 nav {
-  margin-top: 0.5em;
+  margin-top: 8px;
 }
 
 nav a {
