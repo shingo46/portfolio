@@ -16,22 +16,63 @@ header h1{
   margin: 0;
 }
 
-section {
-  max-width: 900px;
-  margin: 2em auto;
-  background: white;
-  padding: 1.5em 2em;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* ▼ ヘッダー内ナビゲーション */
+nav {
+  margin-top: 10px;
 }
 
-section img {
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* main */
+main{
+  padding: 20px;
+}
+
+/* 作品カード */
+.work-card{
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.work-card:hover{
+  transform:translateY(-5px);
+}
+
+/* リンク全体クリック */
+.work-link{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* サムネイル */
+.work-card img{
   width: 100%;
   max-width: 600px;
-  height: auto;
   display: block;
-  margin: 15px auto 0;
+  margin: 0 auto 15px;
   border-radius: 8px;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #555;
 }
 
 /* プロフィールページ用 */
@@ -43,15 +84,13 @@ section img {
   padding: 0;
 }
 
-/* ▼ カメラ説明文の見た目を整える */
-.camera-guide {
-  font-size: 0.9em;
-  color: #555;
-  background: #eef3ff;
-  padding: 0.6em 1em;
-  border-left: 4px solid #4a6cff;
-  border-radius: 5px;
-  margin-bottom: 0.8em;
+section {
+  max-width: 900px;
+  margin: 2em auto;
+  background: white;
+  padding: 1.5em 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* ▼ iframe を綺麗に表示する */
@@ -64,26 +103,13 @@ iframe {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-/* footer */
-footer {
-  text-align: center;
-  padding: 1em;
+/* ▼ カメラ説明文の見た目を整える */
+.camera-guide {
+  font-size: 0.9em;
   color: #555;
+  background: #eef3ff;
+  padding: 10px;
+  border-left: 4px solid #4a6cff;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
-
-/* ▼ ヘッダー内ナビゲーション */
-nav {
-  margin-top: 8px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
