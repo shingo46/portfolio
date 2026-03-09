@@ -68,6 +68,15 @@ main{
   border-radius: 8px;
 }
 
+/* 作品ページ画像 */
+section img{
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 10px auto 20px;
+  border-radius: 8px;
+}
+
 /* footer */
 footer {
   text-align: center;
@@ -79,6 +88,7 @@ footer {
 .profile-section{
   text-align: center;
 }
+
 .profile-section ul{
   list-style-position: inside;
   padding: 0;
@@ -93,7 +103,7 @@ section {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* ▼ iframe を綺麗に表示する */
+/* ▼ iframe を綺麗に表示する 共通*/
 iframe {
   width: 100%;
   height: 500px;
@@ -101,6 +111,11 @@ iframe {
   border-radius: 10px;
   margin-top: 10px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Microsoft Forms用 */
+iframe.ms-form{
+  height: 900px;
 }
 
 /* ▼ カメラ説明文の見た目を整える */
