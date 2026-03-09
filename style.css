@@ -181,7 +181,7 @@ iframe.ms-form{
 .dropdown-menu{
   display: none;
   position: absolute;
-  top: 100px;
+  top: 100%;
   left: 0;
   background: white;
   padding: 10px 0;
