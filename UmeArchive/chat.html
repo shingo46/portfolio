@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>梅澤美波トーク</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="chat-header">
+
+        <button class="back-btn"
+            onclick="location.href='index.html'">
+            ←
+        </button>
+
+        <h1>梅澤 美波</h1>
+
+    </header>
+
+    <main class="chat-area">
+
+        <!-- メッセージ１ -->
+
+        <div class="message">
+
+            <div class="message-header">
+
+                <img
+                    src="images/ume_icon.jpg"
+                    class="mini-icon">
+
+                <span class="member-name">
+                    梅澤美波
+                </span>
+
+                <span class="message-date">
+                    3/22 10:14
+                </span>
+
+            </div>
+
+            <div class="message-box">
+
+                <img
+                    src="images/talk1.jpg"
+                    class="talk-image"
+                    onclick="openImage(this.src)">
+
+                <p>
+                    今日はミーグリです<br>
+                    よろしくね
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- メッセージ２ -->
+
+        <div class="message">
+
+            <div class="message-header">
+
+                <img
+                    src="images/ume_icon.jpg"
+                    class="mini-icon">
+
+                <span class="member-name">
+                    梅澤美波
+                </span>
+
+                <span class="message-date">
+                    3/22 20:51
+                </span>
+
+            </div>
+
+            <div class="message-box">
+
+                <img
+                    src="images/talk2.jpg"
+                    class="talk-image"
+                    onclick="openImage(this.src)">
+
+                <p>
+                    ミーグリありがとう！<br>
+                    楽しかった！
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- 画像拡大用 -->
+
+    <div id="imageModal"
+        class="modal"
+        onclick="closeImage()">
+
+        <img id="modalImage">
+
+    </div>
+
+    <script>
+
+        function openImage(src)
+        {
+            document.getElementById("imageModal").style.display = "flex";
+            document.getElementById("modalImage").src = src;
+        }
+
+        function closeImage()
+        {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>

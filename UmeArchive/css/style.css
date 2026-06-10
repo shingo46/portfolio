@@ -1,0 +1,196 @@
+body{
+    margin:0;
+    background:#f4f4f4;
+    font-family:sans-serif;
+}
+
+header{
+    background: #9c4aa8;
+    color:white;
+    padding:15px;
+    display: flex;
+    align-items: center;
+}
+
+header h1{
+    margin:0 auto;
+}
+
+.online-member{
+    padding: 30px;
+}
+
+.member-card{
+    width:120px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.member-icon{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border:4px solid #9c4aa8;
+    object-fit:cover;
+}
+
+.chat-area{
+    padding:20px;
+}
+
+.message{
+    margin-bottom:40px;
+}
+
+.message-header{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.mini-icon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:3px solid #9c4aa8;
+}
+
+.message-box{
+    background:white;
+    border:3px solid black;
+    padding:20px;
+    margin-left:60px;
+}
+
+.talk-image{
+    width:100%;
+    max-width:500px;
+}
+
+.chat-header{
+    background:#9c4aa8;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:15px;
+}
+
+.back-btn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.chat-header h1{
+    margin-left:20px;
+}
+
+.chat-area{
+    padding:20px;
+}
+
+.message{
+    margin-bottom:50px;
+}
+
+.message-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+}
+
+.member-name{
+    font-size:22px;
+}
+
+.message-date{
+    color:#444;
+}
+
+.mini-icon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:3px solid #9c4aa8;
+    object-fit:cover;
+}
+
+.message-box{
+    background:white;
+    border:2px solid #333;
+    margin-left:60px;
+    padding:20px;
+    position:relative;
+}
+
+.message-box::before{
+    content:"";
+    position:absolute;
+
+    left:-15px;
+    top:15px;
+
+    width:0;
+    height:0;
+
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+    border-right:15px solid #333;
+}
+
+.message-box::after{
+    content:"";
+    position:absolute;
+
+    left:-12px;
+    top:15px;
+
+    width:0;
+    height:0;
+
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+    border-right:15px solid white;
+}
+
+.talk-image,
+.talk-video{
+    display:block;
+
+    width:90%;
+    max-width:500px;
+
+    height:auto;
+
+    margin:0 auto 20px auto;
+
+    border-radius:5px;
+
+    cursor:pointer;
+}
+
+.modal{
+    display:none;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.8);
+
+    justify-content:center;
+    align-items:center;
+}
+
+#modalImage{
+    max-width:90%;
+    max-height:90%;
+}
