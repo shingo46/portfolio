@@ -194,3 +194,14 @@ header h1{
     max-width:90%;
     max-height:90%;
 }
+
+.talk-video{
+    display:block;
+
+    width:90%;
+    max-width:500px;
+
+    margin:0 auto;
+
+    border-radius:5px;
+}

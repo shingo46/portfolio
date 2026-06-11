@@ -1,0 +1,28 @@
+[
+    {
+        "type": "image",
+        "date": "2026/03/22 10:14",
+        "text": "今日はミーグリです\nよろしくね",
+        "image": "images/talk1.jpg"
+    },
+
+    {
+        "type": "image",
+        "date": "2026/03/22 20:51",
+        "text": "ミーグリありがとう！\n楽しかった！",
+        "image": "images/talk2.jpg"
+    },
+
+    {
+        "type": "text",
+        "date": "2026/03/23 10:14",
+        "text": "おはよ～"
+    },
+    
+    {
+        "type": "video",
+        "date": "2026/03/23 10:14",
+        "video": "videos/movie1.mp4"
+    }
+       
+]
