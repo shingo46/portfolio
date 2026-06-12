@@ -28,7 +28,7 @@ async function loadMessages()
                 onclick="openImage('${message.image}')">
 
             <p>
-                ${message.text.replace(/\n/g,"<br>")}
+                ${convertUrlToLink(message.text).replace(/\n/g,"<br>")}
             </p>
             `;
         }
@@ -38,7 +38,7 @@ async function loadMessages()
             content =
             `
             <p>
-                ${message.text.replace(/\n/g,"<br>")}
+                ${convertUrlToLink(message.text).replace(/\n/g,"<br>")}
             </p>
             `;
         }
@@ -99,6 +99,14 @@ function closeImage()
 {
     document.getElementById("imageModal")
         .style.display = "none";
+}
+
+function convertUrlToLink(text)
+{
+    return text.replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank">$1</a>'
+    );
 }
 
 loadMessages();
